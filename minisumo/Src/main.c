@@ -38,7 +38,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_hal.h"
-
 /* USER CODE BEGIN Includes */
 /* USER CODE END Includes */
 
@@ -112,52 +111,82 @@ int main(void)
   HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_SET);
 
   if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1)==HAL_OK) {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+	  for (uint8_t i = 0; i < 5; i++) {
+	  	HAL_Delay(100);
+	  	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
+	  }
   }
 
   if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4)==HAL_OK) {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+	  for (uint8_t i = 0; i < 5; i++) {
+	  	HAL_Delay(100);
+	  	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  }
   }
 
+  uint8_t data[50]; // Tablica przechowujaca wysylana wiadomosc.
+  uint16_t size = 0; // Rozmiar wysylanej wiadomosci
+  uint16_t received;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
-	  DutyL = 0;
-	  DutyR = 0;
 
-	  HAL_Delay(20);
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
-	  	DutyR = 40;
-	  }
 
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_SET);
-	  	DutyR = 20;
-	  } else {
-		  HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_RESET);
-	  }
 
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin)) {
-	  	DutyL = 40;
-	  }
+  	switch (atoi(&received)) {
+  		case 0: // Jezeli odebrany zostanie znak 0
+  			size = sprintf(data, "STOPPED....");
+  			break;
 
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_SET);
-	  	DutyL = 20;
-	  } else {
-		  HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_RESET);
-	  }
+  		case 1: // Jezeli odebrany zostanie znak 1
+  			size = sprintf(data, "WORKING...");
+  			HAL_UART_Transmit_IT(&huart3, data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
 
-	  if (!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin) || !HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_SET);
-	  } else {
-	  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_RESET);
-	  }
 
-	  TIM1->CCR1 = DutyR;
-	  TIM1->CCR4 = DutyL;
+  		  DutyL = 0;
+  		  DutyR = 0;
+  		  HAL_Delay(20);
+  		  if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
+  		  	DutyR = 40;
+  		  }
+
+  		  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin)) {
+  		  	HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_SET);
+  		  	DutyR = 20;
+  		  } else {
+  			  HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_RESET);
+  		  }
+
+  		  if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin)) {
+  		  	DutyL = 40;
+  		  }
+
+  		  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin)) {
+  		  	HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_SET);
+  		  	DutyL = 20;
+  		  } else {
+  			  HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_RESET);
+  		  }
+
+  		  if (!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin) || !HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
+  		  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_SET);
+  		  } else {
+  		  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_RESET);
+  		  }
+
+  		  TIM1->CCR1 = DutyR;
+  		  TIM1->CCR4 = DutyL;
+
+  			break;
+
+  		default: // Jezeli odebrano nieobslugiwany znak
+  			size = sprintf(data, "Waiting....");
+  			HAL_UART_Transmit_IT(&huart3, data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+  			break;
+  	}
+  	HAL_UART_Receive_IT(&huart3, &received, 1); // Ponowne wczenie nasuchiwania
   /* USER CODE END WHILE */
   /* USER CODE BEGIN 3 */
   }
