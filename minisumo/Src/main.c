@@ -44,13 +44,16 @@
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+
 TIM_HandleTypeDef htim1;
+
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 uint16_t DutyR = 0;
 uint16_t DutyL = 0;
+uint8_t Received;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,9 +65,36 @@ static void MX_USART3_UART_Init(void);
                                     
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
                                 
+
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
+	uint8_t Data[50]; // Tablica przechowujaca wysylana wiadomosc.
+	uint16_t size = 0; // Rozmiar wysylanej wiadomosci
+
+	// Odebrany znak zostaje przekonwertowany na liczbe calkowita i sprawdzony
+	// instrukcja warunkowa
+	switch (atoi(&Received)) {
+
+	case 0: // Jezeli odebrany zostanie znak 0
+		size = sprintf(Data, "STOP\n\r");
+		HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_RESET);
+		break;
+
+	case 1: // Jezeli odebrany zostanie znak 1
+		size = sprintf(Data, "START\n\r");
+		HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_SET);
+		break;
+
+	default: // Jezeli odebrano nieobslugiwany znak
+		size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+		break;
+	}
+
+	HAL_UART_Transmit_IT(&huart3, Data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+	HAL_UART_Receive_IT(&huart3, &Received, 1);
+}
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -105,63 +135,32 @@ int main(void)
   HAL_TIM_PWM_Start(&htim1, pwm_motor_r_Pin);
   HAL_TIM_PWM_Start(&htim1, pwm_motor_l_Pin);
 
+  HAL_UART_Receive_IT(&huart3, &Received, 1);
 
   HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_SET);
   HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_SET);
 
-  if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1)==HAL_OK) {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
-  }
-
-  if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4)==HAL_OK) {
-	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-  }
+//  if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1)==HAL_OK) {
+//	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
+//  }
+//
+//  if (HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4)==HAL_OK) {
+//	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+//  }
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
-	  DutyL = 0;
-	  DutyR = 0;
-
-	  HAL_Delay(20);
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
-	  	DutyR = 40;
-	  }
-
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_SET);
-	  	DutyR = 20;
-	  } else {
-		  HAL_GPIO_WritePin(GPIOA, led_2_Pin, GPIO_PIN_RESET);
-	  }
-
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin)) {
-	  	DutyL = 40;
-	  }
-
-	  if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_SET);
-	  	DutyL = 20;
-	  } else {
-		  HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_RESET);
-	  }
-
-	  if (!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin) || !HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
-	  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_SET);
-	  } else {
-	  	HAL_GPIO_WritePin(GPIOA, led_bt_Pin, GPIO_PIN_RESET);
-	  }
-
-	  TIM1->CCR1 = DutyR;
-	  TIM1->CCR4 = DutyL;
   /* USER CODE END WHILE */
+
   /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+
 }
 
 /** System Clock Configuration

@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=D:/workspace/minisumo/MinisumoSTM-master/minisumo/Inc
+HeaderPath=D:/workspace/MinisumoSTM/minisumo/Inc
 HeaderFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;
-SourcePath=D:/workspace/minisumo/MinisumoSTM-master/minisumo/Src
+SourcePath=D:/workspace/MinisumoSTM/minisumo/Src
 SourceFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
