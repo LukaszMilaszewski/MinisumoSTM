@@ -2328,3 +2328,1444 @@ arm-none-eabi-size "minisumo.elf"
    text	   data	    bss	    dec	    hex	filename
   12592	    476	   1772	  14840	   39f8	minisumo.elf
  
+15:15:24 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:105:12: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+    sprintf(Data[0], "1");
+            ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:107:12: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+    sprintf(Data[0], "0");
+            ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:110:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[1], "1");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:112:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[1], "0");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:115:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[2], "1");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:117:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[2], "0");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:120:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[3], "1");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:122:14: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+      sprintf(Data[3], "0");
+              ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12720	    476	   1772	  14968	   3a78	minisumo.elf
+ 
+15:16:05 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:26:46 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12624	    476	   1772	  14872	   3a18	minisumo.elf
+ 
+15:30:32 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:31:24 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:31:57 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:32:36 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:42:36 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+15:51:18 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: passing argument 1 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t {aka unsigned char}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:132:32: warning: passing argument 2 of 'HAL_UART_Transmit_IT' makes pointer from integer without a cast [-Wint-conversion]
+  HAL_UART_Transmit_IT(&huart3, Data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+                                ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:639:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:10: warning: 'Data' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   size = sprintf(Data, "STOP\n\r");
+          ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12596	    476	   1772	  14844	   39fc	minisumo.elf
+ 
+15:55:49 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:105:12: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+    Data[0] = 1;
+            ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:110:14: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+      Data[1] = 1;
+              ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:132:32: warning: passing argument 2 of 'HAL_UART_Transmit_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  HAL_UART_Transmit_IT(&huart3, Data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+                                ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:639:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char **'
+ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12612	    476	   1772	  14860	   3a0c	minisumo.elf
+ 
+15:56:23 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'char **'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:132:32: warning: passing argument 2 of 'HAL_UART_Transmit_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  HAL_UART_Transmit_IT(&huart3, Data, size); // Rozpoczecie nadawania danych z wykorzystaniem przerwan
+                                ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:639:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char **'
+ HAL_StatusTypeDef HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12628	    476	   1772	  14876	   3a1c	minisumo.elf
+ 
+16:00:06 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12624	    476	   1772	  14872	   3a18	minisumo.elf
+ 
+16:00:29 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12624	    476	   1772	  14872	   3a18	minisumo.elf
+ 
+16:38:16 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:116:3: error: expected ';' before '}' token
+   } else {
+   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:124:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d/n", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+make: *** [Application/User/main.o] Error 1
+16:38:27 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:124:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d/n", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12688	    476	   1772	  14936	   3a58	minisumo.elf
+ 
+17:02:15 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:80:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:88:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:95:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:124:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:128:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d", 8);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:131:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12716	    476	   1772	  14964	   3a74	minisumo.elf
+ 
+22:17:43 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:81:15: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:89:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:96:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:105:35: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+      HAL_UART_Receive_IT(&huart3, &Received, 3);
+                                   ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:640:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:106:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+      uint8_t data = atoi(&Received);
+                          ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:108:16: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+       engine = 700;
+                ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:146:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:150:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:150:24: warning: format '%c' expects argument of type 'int', but argument 3 has type 'uint8_t * {aka unsigned char *}' [-Wformat=]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                        ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:150:24: warning: format '%c' expects argument of type 'int', but argument 3 has type 'uint8_t * {aka unsigned char *}' [-Wformat=]
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:155:31: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+  HAL_UART_Receive_IT(&huart3, &Received, 1);
+                               ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:640:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'main':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:196:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_UART_Receive_IT(&huart3, &Received, 1);
+                                ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:640:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12732	    476	   1772	  14980	   3a84	minisumo.elf
+ 
+22:19:06 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+22:23:49 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:82:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:90:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:97:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:106:35: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+      HAL_UART_Receive_IT(&huart3, &temporary, 3);
+                                   ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:640:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:107:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+      uint8_t data = atoi(&temporary);
+                          ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:109:16: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+       engine = 700;
+                ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:147:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:151:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12736	    476	   1780	  14992	   3a90	minisumo.elf
+ 
+22:45:57 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:82:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:90:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:97:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:106:35: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+      HAL_UART_Receive_IT(&huart3, &temporary, 3);
+                                   ^
+In file included from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:315:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:640:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:108:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+      uint8_t data = atoi(&temporary);
+                          ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:110:16: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+       engine = 700;
+                ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:150:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:154:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12748	    476	   1780	  15004	   3a9c	minisumo.elf
+ 
+22:57:17 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:82:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:90:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:97:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:108:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+      uint8_t data = atoi(&temporary);
+                          ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:110:16: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+       engine = 700;
+                ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:150:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:154:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12748	    476	   1780	  15004	   3a9c	minisumo.elf
+ 
+23:01:00 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:82:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+  switch (atoi(&Received)) {
+               ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:90:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "STOP\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:97:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "START\n\r");
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:109:26: warning: passing argument 1 of 'atoi' from incompatible pointer type [-Wincompatible-pointer-types]
+      uint8_t data = atoi(&temporary);
+                          ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t (*)[3] {aka unsigned char (*)[3]}'
+ int _EXFUN(atoi,(const char *__nptr));
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:111:16: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+       engine = 700;
+                ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:151:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:155:18: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+   size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
+                  ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  12756	    476	   1780	  15012	   3aa4	minisumo.elf
+ 

@@ -56,7 +56,9 @@ UART_HandleTypeDef huart3;
 uint16_t DutyR = 0;
 uint16_t DutyL = 0;
 uint8_t Received;
+uint8_t temporary[3];
 bool run = false;
+uint8_t engine = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -72,10 +74,9 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-
-	uint8_t Data[50]; // Tablica przechowujaca wysylana wiadomosc.
 	uint16_t size = 0; // Rozmiar wysylanej wiadomosci
-
+	uint8_t Data[50]; // Tablica przechowujaca wysylana wiadomosc.
+	int temp[4];
 	// Odebrany znak zostaje przekonwertowany na liczbe calkowita i sprawdzony
 	// instrukcja warunkowa
 	switch (atoi(&Received)) {
@@ -100,17 +101,58 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		HAL_GPIO_WritePin(GPIOA, led_3_Pin, GPIO_PIN_RESET);
 		break;
 
+	case 8:
+		while (engine != 700) {
+					HAL_Delay(10);
+					HAL_UART_Receive_IT(&huart3, temporary, 3);
+					HAL_UART_Transmit_IT(&huart3, temporary, 3);
+					uint8_t data = atoi(&temporary);
+					if (data == 700) {
+						engine = 700;
+					}
+
+					if (data > 100 && data < 200  && data != 700) {
+						data -= 100;
+						TIM1->CCR1 = data;
+					}
+
+					if (data > 300 && data < 400  && data != 700) {
+						data -= 300;
+						TIM1->CCR4 = data;
+					}
+
+
+		}
+
+		break;
+
 	case 9:
 //		HAL_Delay(100);
 		if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin)) {
-			size = sprintf(Data, "1");
+			temp[0] = 1;
 		} else {
-			size = sprintf(Data, "0");
+			temp[0] = 0;
 		}
+		if(!HAL_GPIO_ReadPin(GPIOB, sharp_ul_Pin)) {
+			temp[1] = 1;
+		} else {
+			temp[1] = 0;
+		}
+		if(!HAL_GPIO_ReadPin(GPIOB, sharp_ur_Pin)) {
+			temp[2] = 1;
+		} else {
+			temp[2] = 0;
+		}
+		if(!HAL_GPIO_ReadPin(GPIOB, sharp_r_Pin)) {
+			temp[3] = 1;
+		} else {
+			temp[3] = 0;
+		}
+		size = sprintf(Data, "%d%d%d%d", temp[0], temp[1], temp[2], temp[3]);
 		break;
 
 	default: // Jezeli odebrano nieobslugiwany znak
-		size = sprintf(Data, "Odebrano nieznany znak: %c\n\r", Received);
+		size = sprintf(Data, "Odebrano nieznany znak: %c", Received);
 		break;
 	}
 
