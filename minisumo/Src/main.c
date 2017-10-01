@@ -61,7 +61,8 @@ char received_message[10];
 
 // program type flags
 bool debug_motors = false;
-
+bool debug_tires = false;
+bool debug_sensors = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,8 +97,14 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	case 2:
 		debug_motors = true;
 		break;
+	case 3:
+		debug_tires = true;
+		break;
+	case 4:
+		debug_sensors = true;
+		break;
 	default:
-		debug_motors = false;
+//		debug_motors = false;
 		TIM1->CCR1 = 0;
 		TIM1->CCR4 = 0;
 		HAL_UART_Receive_IT(&huart3, received_buffor, 10);
@@ -195,6 +202,16 @@ int main(void)
 
   		HAL_UART_Receive_IT(&huart3, received_buffor, 10);
   	}
+
+  	if (debug_tires) {
+  		debug_tires = false;
+  		TIM1->CCR1 = 20;
+  		TIM1->CCR4 = 20;
+
+  		HAL_UART_Receive_IT(&huart3, received_buffor, 10);
+  	}
+
+
 
   /* USER CODE END WHILE */
 
