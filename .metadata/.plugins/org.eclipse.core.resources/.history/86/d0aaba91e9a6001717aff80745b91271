@@ -53,8 +53,8 @@ UART_HandleTypeDef huart3;
 /* Private variables ---------------------------------------------------------*/
 
 // buffors for received data by uart
-uint8_t receive_buffer[200];
-uint8_t transmit_buffer[200];
+uint8_t input_buffer[200];
+uint8_t output_buffer[200];
 
 // send/received message container
 int transmit_message[10];
@@ -89,7 +89,7 @@ int parseValueFromMessage(const int start, const int end) {
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
-	sscanf((char*)receive_buffer, "%s", received_message);
+	sscanf((char*)input_buffer, "%s", received_message);
 	HAL_GPIO_TogglePin(GPIOA, led_bt_Pin);
 	char option[1];
 	option[0] = received_message[0];
@@ -108,7 +108,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 //		debug_motors = false;
 		TIM1->CCR1 = 0;
 		TIM1->CCR4 = 0;
-		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
+		HAL_UART_Receive_IT(&huart3, input_buffer, 10);
 		break;
 	}
 }
@@ -164,7 +164,7 @@ int main(void)
 	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
   }
 
-  HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
+  HAL_UART_Receive_IT(&huart3, input_buffer, 10);
 
 	 /* USER CODE END 2 */
 
@@ -201,7 +201,7 @@ int main(void)
   		TIM1->CCR1 = parseValueFromMessage(3,4);
   		TIM1->CCR4 = parseValueFromMessage(5,6);
 
-  		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
+  		HAL_UART_Receive_IT(&huart3, input_buffer, 10);
   	}
 
   	if (debug_tires) {
@@ -209,14 +209,14 @@ int main(void)
   		TIM1->CCR1 = 20;
   		TIM1->CCR4 = 20;
 
-  		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
+  		HAL_UART_Receive_IT(&huart3, input_buffer, 10);
   	}
 
   	// TODO: handle KTIR sensors
   	if (debug_sensors) {
   		debug_sensors = false;
 
-  		int transmit_message[4] = {0};
+  		int transmit_message = {0};
 
   		if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin))
   			transmit_message[0] = 1;
@@ -231,10 +231,10 @@ int main(void)
   			transmit_message[3] = 1;
 
   		// not tested!!!!
-  		uint16_t size = sprintf(transmit_buffer, "%d", transmit_message);
+  		uint16_t size = sprintf(output_buffer, "%d", transmit_message);
 
-  		HAL_UART_Receive_IT(&huart3, receive_buffer, 1);
-  		HAL_UART_Transmit_IT(&huart3, transmit_buffer, size);
+  		HAL_UART_Receive_IT(&huart3, input_buffer, 1);
+  		HAL_UART_Transmit_IT(&huart3, output_buffer, size);
   	}
 
   /* USER CODE END WHILE */

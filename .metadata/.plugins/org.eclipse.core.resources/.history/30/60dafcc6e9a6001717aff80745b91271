@@ -231,7 +231,7 @@ int main(void)
   			transmit_message[3] = 1;
 
   		// not tested!!!!
-  		uint16_t size = sprintf(transmit_buffer, "%d", transmit_message);
+  		uint16_t size = sprintf(transmit_buffer, "%d", (int)transmit_message);
 
   		HAL_UART_Receive_IT(&huart3, receive_buffer, 1);
   		HAL_UART_Transmit_IT(&huart3, transmit_buffer, size);

@@ -216,7 +216,7 @@ int main(void)
   	if (debug_sensors) {
   		debug_sensors = false;
 
-  		int transmit_message[4] = {0};
+  		int transmit_message = {0};
 
   		if(!HAL_GPIO_ReadPin(GPIOB, sharp_l_Pin))
   			transmit_message[0] = 1;
