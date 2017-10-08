@@ -10487,3 +10487,44 @@ arm-none-eabi-size "minisumo.elf"
 19:49:35 **** Incremental Build of configuration Debug for project minisumo ****
 make all 
 make: Nothing to be done for `all'.
+19:44:50 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+Building file: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+Invoking: MCU GCC Compiler
+D:\workspace\MinisumoSTM\minisumo\SW4STM32\minisumo\Debug
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft '-D__weak=__attribute__((weak))' '-D__packed="__attribute__((__packed__))"' -DUSE_HAL_DRIVER -DSTM32F100xB '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I"D:/workspace/MinisumoSTM/minisumo/Inc" -I"D:/workspace/MinisumoSTM/minisumo/Drivers/CMSIS/Include" -I../../../../../Drivers/CMSIS/Include -I../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../Drivers/CMSIS/Include -I../../../../../../../../../../../Drivers/CMSIS/Include  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" -o "Application/User/main.o" "D:/workspace/MinisumoSTM/minisumo/Src/main.c"
+<command-line>:0:0: warning: "__packed" redefined
+<command-line>:0:0: note: this is the location of the previous definition
+D:/workspace/MinisumoSTM/minisumo/Src/main.c: In function 'main':
+D:/workspace/MinisumoSTM/minisumo/Src/main.c:241:29: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+     uint16_t size = sprintf(transmit_buffer, "%d%d%d%d", transmit_message[0], transmit_message[1], transmit_message[2], transmit_message[3]);
+                             ^
+In file included from d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:29:0,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h:52,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:47,
+                 from D:/workspace/MinisumoSTM/minisumo/Inc/stm32f1xx_hal_conf.h:219,
+                 from D:/workspace/MinisumoSTM/minisumo/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:48,
+                 from D:/workspace/MinisumoSTM/minisumo/Src/main.c:40:
+d:\programs\stmworkbeanch\plugins\fr.ac6.mcu.externaltools.arm-none.win32_1.13.3.201707031232\tools\compiler\arm-none-eabi\include\stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int _EXFUN(sprintf, (char *__restrict, const char *__restrict, ...)
+     ^
+Finished building: D:/workspace/MinisumoSTM/minisumo/Src/main.c
+ 
+Building target: minisumo.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"../STM32F100C8Tx_FLASH.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "minisumo.elf" @"objects.list"   -lm
+Finished building target: minisumo.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "minisumo.elf" "minisumo.bin"
+arm-none-eabi-size "minisumo.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15456	    480	   2216	  18152	   46e8	minisumo.elf
+ 
+20:05:21 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.
+20:05:35 **** Incremental Build of configuration Debug for project minisumo ****
+make all 
+make: Nothing to be done for `all'.

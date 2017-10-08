@@ -113,7 +113,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		break;
 	case 6:
 		remote_gyro = true;
-		break;
 	default:
 		debug_tires = false;
 		TIM1->CCR1 = 0;
@@ -281,45 +280,6 @@ int main(void)
 
   	  HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
   	}
-
-
-  	if (remote_gyro) {
-  	  		remote_gyro = false;
-  	  		switch (parseValueFromMessage(1,1)) {
-  	  		case 1:
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_SET);
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_RESET);
-  	  	  	break;
-  	  	  case 2:
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_SET);
-  	  	  	break;
-  	  	  default:
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
-  	  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_RESET);
-  	  	  	break;
-  	  		}
-
-  	  		switch (parseValueFromMessage(2,2)) {
-  	  		case 1:
-  	  			HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_RESET);
-  	  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_SET);
-  	  	  	break;
-  	  	  case 2:
-  	  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_SET);
-  	  	    HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
-  	  	    break;
-  	  	  default:
-  	  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_RESET);
-  	  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
-  	  	  	break;
-  	  		}
-
-  	  		TIM1->CCR1 = parseValueFromMessage(3,4);
-  	  	  TIM1->CCR4 = parseValueFromMessage(5,6);
-
-  	  	  HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
-  	  	}
 
   /* USER CODE END WHILE */
 
