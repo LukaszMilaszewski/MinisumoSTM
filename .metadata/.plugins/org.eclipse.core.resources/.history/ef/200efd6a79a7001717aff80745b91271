@@ -63,9 +63,7 @@ char received_message[10];
 // program type flags
 bool debug_motors = false;
 bool debug_tires = false;
-bool debug_sensors = false;
-
-bool remote_joystick = true;
+bool debug_sensors = false;o
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,16 +100,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		break;
 	case 3:
 		debug_tires = true;
-		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
 		break;
 	case 4:
 		debug_sensors = true;
 		break;
-	case 5:
-		remote_joystick = true;
-		break;
 	default:
-		debug_tires = false;
+		// debug_motors = false;
 		TIM1->CCR1 = 0;
 		TIM1->CCR4 = 0;
 		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
@@ -211,8 +205,11 @@ int main(void)
   	}
 
   	if (debug_tires) {
+  		debug_tires = false;
   		TIM1->CCR1 = 20;
   		TIM1->CCR4 = 20;
+
+  		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
   	}
 
   	// TODO: handle KTIR sensors
@@ -234,48 +231,10 @@ int main(void)
   			transmit_message[3] = 1;
 
   		// not tested!!!!
-  		uint16_t size = sprintf(transmit_buffer, "%d%d%d%d", transmit_message[0], transmit_message[1], transmit_message[2], transmit_message[3]);
+  		uint16_t size = sprintf(transmit_buffer, "%d", transmit_message);
 
-  		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
+  		HAL_UART_Receive_IT(&huart3, receive_buffer, 1);
   		HAL_UART_Transmit_IT(&huart3, transmit_buffer, size);
-  	}
-
-  	if (remote_joystick) {
-  		remote_joystick = false;
-  		switch (parseValueFromMessage(1,1)) {
-  		case 1:
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_SET);
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_RESET);
-  	  	break;
-  	  case 2:
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_SET);
-  	  	break;
-  	  default:
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_RESET);
-  	  	break;
-  		}
-
-  		switch (parseValueFromMessage(2,2)) {
-  		case 1:
-  			HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_SET);
-  	  	break;
-  	  case 2:
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_SET);
-  	    HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
-  	    break;
-  	  default:
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
-  	  	break;
-  		}
-
-  		TIM1->CCR1 = parseValueFromMessage(3,4);
-  	  TIM1->CCR4 = parseValueFromMessage(5,6);
-
-  	  HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
   	}
 
   /* USER CODE END WHILE */
@@ -283,6 +242,7 @@ int main(void)
   /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
+
 }
 
 /** System Clock Configuration

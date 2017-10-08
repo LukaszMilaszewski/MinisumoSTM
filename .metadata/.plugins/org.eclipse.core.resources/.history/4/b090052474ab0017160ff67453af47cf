@@ -252,8 +252,6 @@ int main(void)
   	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_SET);
   	  	break;
   	  default:
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOB, in_motor_l2_Pin, GPIO_PIN_RESET);
   	  	break;
   		}
 
@@ -267,10 +265,10 @@ int main(void)
   	    HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
   	    break;
   	  default:
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p1_Pin, GPIO_PIN_RESET);
-  	  	HAL_GPIO_WritePin(GPIOD, in_motor_p2_Pin, GPIO_PIN_RESET);
   	  	break;
   		}
+
+
 
   		TIM1->CCR1 = parseValueFromMessage(3,4);
   	  TIM1->CCR4 = parseValueFromMessage(5,6);
