@@ -214,6 +214,8 @@ int main(void)
   		}
   	}
 
+
+
   	if (debug_motors) {
   		debug_motors = false;
   		switch (parseValueFromMessage(1,1)) {

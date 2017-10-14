@@ -60,10 +60,6 @@ uint8_t transmit_buffer[200];
 int transmit_message[10];
 char received_message[10];
 
-// setup for automatic
-uint16_t maxSpeed = 0;
-bool ifCompetition = false;
-
 // program type flags
 bool debug_motors = false;
 bool debug_tires = false;
@@ -103,10 +99,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 	option[0] = received_message[0];
 
 	switch(atoi(option)) {
-	case 1:
-		automatic = true;
-		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
-		break;
 	case 2:
 		debug_motors = true;
 		break;
@@ -125,7 +117,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		break;
 	default:
 		debug_tires = false;
-		automatic = false;
 		TIM1->CCR1 = 0;
 		TIM1->CCR4 = 0;
 		HAL_UART_Receive_IT(&huart3, receive_buffer, 10);
@@ -191,29 +182,6 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
-
-  	if (automatic) {
-  		maxSpeed = parseValueFromMessage(3,4);
-  		ifCompetition = parseValueFromMessage(2,2);
-
-  		switch (parseValueFromMessage(1,1)) {
-  		case 0:
-  			// first algorithm
-  			break;
-  		case 1:
-  			// second algorithm
-  			break;
-  		case 2:
-  			// third algorithm
-  			break;
-  		case 3:
-  			// fourth algorithm
-  			break;
-  		default:
-  			break;
-  		}
-  	}
-
   	if (debug_motors) {
   		debug_motors = false;
   		switch (parseValueFromMessage(1,1)) {

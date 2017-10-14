@@ -60,10 +60,6 @@ uint8_t transmit_buffer[200];
 int transmit_message[10];
 char received_message[10];
 
-// setup for automatic
-uint16_t maxSpeed = 0;
-bool ifCompetition = false;
-
 // program type flags
 bool debug_motors = false;
 bool debug_tires = false;
@@ -173,6 +169,9 @@ int main(void)
 //  uint16_t DutyR = 0;
 //  uint16_t DutyL = 0;
 
+  uint16_t maxSpeed = 0;
+  bool ifCompetition = false;
+
   HAL_TIM_PWM_Start(&htim1, pwm_motor_r_Pin);
   HAL_TIM_PWM_Start(&htim1, pwm_motor_l_Pin);
 
@@ -194,25 +193,21 @@ int main(void)
 
   	if (automatic) {
   		maxSpeed = parseValueFromMessage(3,4);
-  		ifCompetition = parseValueFromMessage(2,2);
+  		ifCompetition = parseValueFromMessage(2);
 
-  		switch (parseValueFromMessage(1,1)) {
+  		switch (parseValueFromMessage(1)) {
   		case 0:
-  			// first algorithm
   			break;
   		case 1:
-  			// second algorithm
   			break;
   		case 2:
-  			// third algorithm
   			break;
   		case 3:
-  			// fourth algorithm
-  			break;
-  		default:
   			break;
   		}
   	}
+
+
 
   	if (debug_motors) {
   		debug_motors = false;
