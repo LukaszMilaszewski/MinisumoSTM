@@ -199,7 +199,6 @@ int main(void)
   		switch (parseValueFromMessage(1,1)) {
   		case 0:
   			// first algorithm
-  			HAL_GPIO_TogglePin(GPIOA, led_2_Pin);
   			break;
   		case 1:
   			// second algorithm
@@ -209,7 +208,6 @@ int main(void)
   			break;
   		case 3:
   			// fourth algorithm
-  			HAL_GPIO_TogglePin(GPIOA, led_3_Pin);
   			break;
   		default:
   			break;
